@@ -1,0 +1,102 @@
+Manual de Instalación para Proyecto Prueba tecnica Hipertexto
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Requisitos Previos
+PHP: PHP 7.3 o superior.
+Composer: Gestor de dependencias para PHP.
+MySQL: Servidor de base de datos.
+Node.js y npm: Para la gestión de dependencias frontend.
+Git: Para clonar el repositorio del proyecto.
+
+***********************************************************************************
+Paso 1: Clonar el Repositorio
+
+git clone https://github.com/sniperwolf2315/pruebahipertexto.git
+cd tu-proyecto
+
+************************************************************************************
+Paso 2: Instalar Dependencias de PHP
+Utiliza Composer para instalar las dependencias de PHP.
+
+composer install
+*************************************************************************************
+Paso 3: Instalar Dependencias de Node.js
+Instala las dependencias de Node.js.
+
+npm install
+
+************************************************************************************
+Paso 4: Configurar el Archivo .env
+Copia el archivo de configuración de ejemplo
+.env.example a .env y modifica las variables necesarias, como la configuración de la base de datos
+y el nombre de la aplicación.
+
+cp .env.example .env
+
+***************************************************************************************
+Edita el archivo .env con tu editor de texto favorito para configurar la base de datos y otras variables de entorno necesarias.
+
+APP_NAME=colegio
+APP_ENV=local
+APP_KEY=base64:K/zXHqqiCruL1XOxbyyQegGpZTkBAa8XislLxQKUtHA=
+APP_DEBUG=true
+APP_TIMEZONE=UTC
+APP_URL=http://localhost
+
+APP_LOCALE=en
+APP_FALLBACK_LOCALE=en
+APP_FAKER_LOCALE=en_US
+
+APP_MAINTENANCE_DRIVER=file
+# APP_MAINTENANCE_STORE=database
+
+BCRYPT_ROUNDS=12
+
+LOG_CHANNEL=stack
+LOG_STACK=single
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=colegio
+DB_USERNAME=root
+DB_PASSWORD=
+
+*****************************************************************************************************************
+Paso 5: Generar la Llave de la Aplicación
+Genera una llave de aplicación única.
+
+php artisan key:generate
+
+*****************************************************************************************************************
+Paso 6: Migrar la Base de Datos o importar la db desde el phpmyadmin para lo cual debes crear la dabase y luego importar el archivo 
+estudiantes.sql
+
+Ejecuta las migraciones de la base de datos para crear las tablas necesarias.
+
+php artisan migrate
+
+*************************************************************************************************************************
+Paso 7: Compilar los Assets
+Compila los assets (CSS, JavaScript) utilizando Laravel Mix.
+
+npm run dev
+
+****************************************************************************
+Para compilar los assets para producción, utiliza:
+
+npm run production
+
+*****************************************************************************
+Paso 8: Iniciar el Servidor de Desarrollo
+Inicia el servidor de desarrollo de Laravel.
+
+
+php artisan serve
+
+************************************************************************************
+
+
+

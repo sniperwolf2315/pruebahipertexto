@@ -12,8 +12,8 @@ class NotaController extends Controller
 {
     public function index()
     {
-        $notas = Nota::all();
-        return view('notas', compact('notas'));
+        $estudiantes = Estudiante::all();
+        return view('notas', compact('estudiantes'));
     }
 
     public function create()
